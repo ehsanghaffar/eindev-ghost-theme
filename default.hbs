@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="{{@site.locale}}" dir="rtl">
+<head>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.1/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <title>{{meta_title}}</title>
+
+    {{ghost_head}}
+    {{!-- Outputs important meta data and settings, should always be in <head> --}}
+
+</head>
+<body class="{{body_class}}">
+    <div>
+        <div class="layout">
+
+            {{> "header"}}
+
+            <main>
+
+                {{{body}}}
+                {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
+
+            </main>
+
+            <footer class="gh-foot">
+    <div class="gh-container">
+        <div class="gh-foot-menu">
+            {{navigation}}
+        </div>
+        <div class="gh-foot-meta">
+            Published with <a href="https://ghost.org" target="_blank" rel="noopener">Ghost</a>
+        </div>
+    </div>
+            </footer>
+
+        </div>
+    </div>
+
+{{!-- <foot> --}}
+
+<script src="{{asset "built/jquery-3.4.1.min.js"}}"></script>
+
+{{#if pagination.pages}}
+<script>
+    var maxPages = parseInt('{{pagination.pages}}');
+</script>
+<script src="{{asset "built/infinitescroll.js"}}"></script>
+{{/if}}
+
+<script>
+$(document).ready(function () {
+    // Mobile Menu Trigger
+    $('.gh-burger').click(function () {
+        $('body').toggleClass('gh-head-open');
+    });
+});
+</script>
+
+{{#is "post, page"}}
+<script src="{{asset "built/jquery.fitvids.js"}}"></script>
+<script>
+var images = document.querySelectorAll('.kg-gallery-image img');
+images.forEach(function (image) {
+    var container = image.closest('.kg-gallery-image');
+    var width = image.attributes.width.value;
+    var height = image.attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = ratio + ' 1 0%';
+});
+$(document).ready(function () {
+    var $postContent = $(".gh-content");
+    $postContent.fitVids();
+});
+</script>
+{{/is}}
+
+{{ghost_foot}}
+{{!-- Outputs important scripts - should always be included before closing body tag --}}
+
+</body>
+</html>

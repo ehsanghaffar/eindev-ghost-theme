@@ -1,0 +1,20 @@
+{{!< default}}
+
+<div>
+    <div class="container">
+        {{> "hero"}}
+    </div>
+    <div class="container">
+        <div class="segment">
+            <h2 class="home-heading"><div><div class="title">{{t "Latest Posts"}}</div></div><a class="button" href="/blog">{{t "View all"}}</a></h2>
+            <div class="post-preview">
+        {{#foreach posts}}
+
+            {{> "card"}} {{!-- partials/card.hbs --}}
+
+        {{/foreach}}
+            </div>
+        </div>
+    
+    </div>
+</div>

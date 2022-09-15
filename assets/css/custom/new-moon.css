@@ -1,0 +1,346 @@
+/*
+ New Moon Theme by Tania Rascia
+ https://taniarascia.github.io/new-moon
+ Source: https://github.com/taniarascia/new-moon
+*/
+
+/* Light */
+:root {
+  --code-font-color: #232529;
+  --code-background-color: var(--gray-0);
+  --terminal-background-color: white;
+  --terminal-bar: -webkit-linear-gradient(top, #ebebeb, #d5d5d5);
+  --terminal-accent: white;
+  --terminal-border: #cecbce;
+  --string: #3b9039;
+  --variable: #383a41;
+  --property: #565656;
+  --number: #da7430;
+  --operator: #a87200;
+  --punctuation: #5c6d74;
+  --comment: #869496;
+  --function: #0174a5;
+  --keyword: #111;
+  --attribute: #a87200;
+  --class: #a346a0;
+  --tag: #365ccd;
+  --error: #b0292c;
+  --code-link-hover: var(--link);
+}
+
+pre {
+  border: 0;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  -webkit-font-smoothing: subpixel-antialiased;
+  color: var(--code-font-color);
+  font-family: 'Menlo', var(--font-family-monospace);
+  font-size: 0.85rem;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.45;
+
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+@media screen and (min-width: 800px) {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    font-size: 0.9rem;
+  }
+}
+
+pre[class*='language-'] {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1;
+  background: var(--code-background-color);
+  overflow: initial;
+  border-radius: 4px;
+}
+
+pre.language-text {
+  background: transparent;
+  -webkit-font-smoothing: subpixel-antialiased;
+  margin-left: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+  border: none;
+  box-shadow: none;
+}
+
+code.language-text {
+  color: var(--font-color-base);
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  -webkit-font-smoothing: subpixel-antialiased;
+  background: var(--inline-code-background-color);
+  color: var(--font-color-base);
+  padding: 0.2rem 0.3rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 4px;
+  border: 2px solid var(--border-color);
+}
+
+:not(pre) > a code[class*='language-'] {
+  color: var(--link);
+}
+
+:not(pre) > a code[class*='language-']:hover {
+  color: var(--code-link-hover);
+}
+
+code.language-shell::before {
+  content: '$ ';
+  color: var(--comment);
+}
+
+.gatsby-highlight pre[class*='language-'] {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  overflow: initial;
+  float: left;
+  min-width: 100%;
+}
+
+.gatsby-highlight::after {
+  content: '';
+  clear: both;
+  display: table;
+}
+
+.gatsby-highlight pre.language-terminal {
+  padding: 1rem;
+  position: relative;
+  padding-top: 3rem;
+  white-space: unset;
+  -webkit-text-size-adjust: none;
+  border: 1px solid var(--terminal-border);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: var(--terminal-background-color);
+  max-width: 100%;
+}
+
+code.language-terminal {
+  -webkit-font-smoothing: antialiased;
+  color: var(--terminal-color);
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  white-space: pre-wrap;
+  word-break: break-all;
+}
+
+pre.language-terminal::before {
+  content: '\2022 \2022 \2022';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--terminal-bar);
+  color: #a19ea1;
+  border-top: 1px solid var(--terminal-accent);
+  border-bottom: 1px solid var(--border-color);
+  width: 100%;
+  font-size: 2.5rem;
+  margin: 0;
+  line-height: 0;
+  padding: 15px 0 12px;
+  text-indent: 6px;
+  letter-spacing: -5px;
+  border-bottom: 1px solid var(--border-color);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.gatsby-highlight {
+  background: var(--code-background-color);
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  border-radius: 4px;
+  overflow: auto;
+  padding: 1.25rem;
+  margin: 1.75rem 0;
+  max-width: 100%;
+}
+
+.gatsby-highlight[data-language='terminal'] {
+  box-shadow: none;
+  padding: 0;
+  background: transparent;
+  overflow: auto;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 15px 20px, rgba(0, 0, 0, 0.03) 0px 5px 7px;
+}
+
+.gatsby-highlight[data-language='text'] {
+  background: transparent;
+  padding: 0;
+}
+
+.gatsby-highlight-code-line {
+  background-color: rgb(116, 207, 116, 0.15);
+  display: block;
+  margin-left: -1.25rem;
+  margin-right: -1.25rem;
+  padding-left: calc(1.25rem - 4px);
+  border-left: 4px solid #74cf74;
+}
+
+.filename {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--file-background);
+  padding: 0.3rem 1rem;
+  color: var(--font-color-base);
+  line-height: 1.5;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  margin-bottom: -1.8rem;
+  max-width: 100%;
+}
+
+/* Colors */
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata,
+.token.important {
+  color: var(--comment);
+}
+
+.token.punctuation {
+  color: var(--punctuation);
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property {
+  color: var(--property);
+}
+
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--tag);
+}
+
+.token.number {
+  color: var(--number);
+}
+
+.token.char,
+.token.builtin,
+.token.url,
+.token.inserted {
+  color: var(--code-font-color);
+}
+
+.token.attr-name,
+.token.selector {
+  color: var(--attribute);
+}
+
+.token.attr-value,
+.token.string {
+  color: var(--string);
+}
+
+.token.operator {
+  color: var(--operator);
+}
+
+.token.atrule,
+.token.keyword {
+  color: var(--keyword);
+}
+
+.token.function {
+  color: var(--function);
+}
+
+.language-css,
+.token.boolean,
+.token.class-name {
+  color: var(--class) !important;
+}
+
+.token.regex {
+  color: var(--keyword);
+}
+
+.token.variable {
+  color: var(--variable);
+}
+
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.language-jsx .token.class-name {
+  color: var(--tag) !important;
+}
+
+pre::-moz-selection,
+pre::-moz-selection,
+code::-moz-selection,
+code::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre::selection,
+pre::selection,
+code::selection,
+code::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-']::selection,
+code[class*='language-'] ::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  color: inherit;
+  background: rgba(150, 150, 150, 0.3) !important;
+}

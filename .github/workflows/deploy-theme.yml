@@ -1,0 +1,21 @@
+name: Deploy Theme
+on:
+  push:
+    branches:
+      - main
+jobs:
+  deploy:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v3
+      - uses: Borales/actions-yarn@v3
+        with:
+          cmd: install
+      - run: yarn install
+      - run: yarn test:ci
+      - run: yarn ship
+      - name: Deploy Ghost Theme
+        uses: TryGhost/action-deploy-theme@v1.6.1
+        with:
+          api-url: ${{ secrets.GHOST_ADMIN_API_URL }}
+          api-key: ${{ secrets.GHOST_ADMIN_API_KEY }}

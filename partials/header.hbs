@@ -1,0 +1,16 @@
+<section class="navigation">
+    <div class="container">
+        <nav>
+            {{> logo}}
+            {{#if @site.navigation}}
+                {{navigation}}
+            {{/if}}
+        </nav>
+        <div class="theme-toggle">
+            <button>
+                <img src="../assets/img/dark-mode.png" />
+                <span>{{t "darkmode"}}</span>
+            </button>
+        </div>
+    </div>
+</section>

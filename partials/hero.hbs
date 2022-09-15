@@ -1,0 +1,18 @@
+{{#if @custom.hero_section}}
+<div class="hero-wrapper">
+  <header class="hero index">
+    <h1>{{@custom.hero_title}}</h1>
+    <p class="hero-description small width">
+      {{@custom.hero_text}}
+    </p>
+    
+  </header>
+    {{#if @custom.hero_image}}
+    <img src="{{img_url @custom.hero_image size="small"}}" />
+    {{else}}
+    <div class="decoration">
+      <p>فضای خالی</p>
+    </div>
+    {{/if}}
+</div>
+{{/if}}
