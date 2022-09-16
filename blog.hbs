@@ -1,0 +1,52 @@
+{{!< default}}
+<div>
+    <section class="container markdown-content">
+        <div class="grid">
+            <div class="article-content">
+                <header class="hero">
+                    <h1>نوشته‌ها</h1>
+                </header>
+                <section class="segment">
+                    <h2 class="year">۲۰۲۲</h2>
+                    {{#get "posts" include="tags" as |posts|}}
+                        <div class="posts">
+                            {{#foreach posts}}
+                                <a class="post" href="{{url}}">
+                                    <h3>
+                                        {{title}}
+                                    </h3>
+                                    <time
+                                        datetime="{{date format=" YYYY-MM-DD"}}"
+                                    >{{date format="D MMM YYYY"}}</time>
+                                </a>
+                            {{/foreach}}
+                        </div>
+                    {{/get}}
+                </section>
+            </div>
+            <div class="sidebar-content">
+                <aside class="post-sidebar">
+                    <div class="post-sidebar-card">
+                        <h2>Categories</h2>
+                        <div class="list">
+                            <a class="category" href="/categories/architecture">
+                                <div class="name">Architecture</div>
+                                <div class="count">6</div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="post-sidebar-card">
+                        <h2>Tags</h2>
+                        {{#get "tags" as |tags|}}
+                            <div class="tags">
+                                {{#foreach tags}}
+                                    <a class="tag" href="{{url}}">{{name}}</a>
+                                {{/foreach}}
+                            </div>
+                        {{/get}}
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</div>

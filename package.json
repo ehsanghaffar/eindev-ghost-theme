@@ -105,6 +105,41 @@
             "hero_image": {
                 "type": "image",
                 "group": "homepage"
+            },
+            "latest_post": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "latest_post_title": {
+                "type": "text",
+                "default": "Latest Posts",
+                "group": "homepage"
+            },
+            "featured_post": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "featured_post_title": {
+                "type": "text",
+                "default": "Featured Posts",
+                "group": "homepage"
+            },
+            "projects": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "projects_title": {
+                "type": "text",
+                "default": "Projects",
+                "group": "homepage"
+            },
+            "footer_text": {
+                "type": "text",
+                "default": "Copyright 2022 @ Ehsan Ghaffar",
+                "group": "footer"
             }
         }
     }

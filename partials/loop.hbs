@@ -1,19 +1,19 @@
-<div
-    class="{{post_class}}{{#unless feature_image}} no-image{{/unless}} u-shadow">
-    {{#if featured}}
-        <img class="post-image lazyload u-object-fit"
-            data-src="{{img_url feature_image}}"
-            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
-            data-sizes="auto" alt="{{title}}">
-    {{/if}}
-    {{> post-media same_height=true ratio="rectangle"}}
-    <div class="post-wrapper">
-        {{> post-header tag="h2"}}
-        {{#if excerpt}}
-            <div class="post-excerpt">
-                {{excerpt words="12"}}
-            </div>
+{{#get "posts" filter="featured:true" limit="all" as |featured|}}
+{{#if featured}}
+    {{#foreach featured}}
+<div class="muted card flex">
+    <div class=" gatsby-image-wrapper"
+        style="position: relative; overflow: hidden; display: inline-block; width: 45px; height: 45px;">
+        {{#if featured}}
+        <img aria-hidden="true" src="{{img_url feature_image}}" alt="{{title}}"
+            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0;" />
         {{/if}}
     </div>
-    {{> post-footer}}
+    <div>
+        <time>{{date format="D MMM YYYY"}}</time>
+        <a class="card-header" href="{{url}}">{{title}}</a>
+    </div>
 </div>
+    {{/foreach}}
+{{/if}}
+{{/get}}

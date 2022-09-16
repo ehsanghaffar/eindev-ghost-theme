@@ -1,0 +1,41 @@
+<footer class="footer">
+    <section>
+        <nav>
+            <a href="{{@site.url}}"
+            <span class="desktop-only">{{@custom.footer_text}}</span>
+            </a>
+            <a
+                href="https://ehsanghaffarii.ir/rss.xml"
+                target="_blank"
+                rel="noopener noreferrer"
+            >RSS</a>
+        </nav>
+        <nav>
+          {{#if @site.facebook}}
+            <a
+                href="{{facebook_url @site.facebook}}"
+                title="facebook link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+              <span>facebook</span>
+                <img src="../assets/img/facebook.png" width="30" alt="facebook link" />
+            </a>
+            {{/if}}
+            {{#if @site.twitter}}
+            <a
+                href="{{twitter_url @site.twitter}}"
+                title="twiiter link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>twitter</span>
+                <img
+                    src="../assets/img/twitter.png"
+                    alt="twitter"
+                    width="30"
+                /></a>
+            {{/if}}
+            </nav>
+    </section>
+</footer>
