@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{@site.locale}}" dir="rtl">
+<html lang="{{@site.locale}}" dir="rtl" data-theme-preference="light">
 <head>
 
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/dark-mode.css"}}" />
     <link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.1/dist/font-face.css" rel="stylesheet" type="text/css" />
+    <script src="{{asset "built/main.js"}}" defer></script>
     <title>{{meta_title}}</title>
 
     {{ghost_head}}
@@ -39,6 +41,7 @@
     var maxPages = parseInt('{{pagination.pages}}');
 </script>
 <script src="{{asset "built/infinitescroll.js"}}"></script>
+
 {{/if}}
 
 <script>

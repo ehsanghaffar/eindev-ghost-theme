@@ -1,35 +1,40 @@
+
 {{!< default}}
-
-<div class="gh-page">
-    <div class="gh-container">
-
-        {{#tag}}
-        <header class="gh-page-head">
-
-            <h1>{{name}}</h1>
-
-            <p>
-                {{#if description}}
-                    {{description}}
-                {{else}}
-                    A collection of {{plural ../pagination.total empty='posts' singular='% post' plural='% posts'}}
-                {{/if}}
-            </p>
-
-            {{#if feature_image}}
-                <img class="gh-page-image" src="{{feature_image}}" alt="{{name}}" />
-            {{/if}}
-
-        </header>
-        {{/tag}}
-
-        <div class="gh-postfeed">
-        {{#foreach posts}}
-
-            {{> "card"}} {{!-- partials/card.hbs --}}
-
-        {{/foreach}}
+<div>
+    <section class="container markdown-content">
+        <div class="grid">
+            <div class="article-content">
+                {{#tag}}
+                <header class="hero">
+                    <h1>{{name}}</h1>
+                </header>
+                {{/tag}}
+                <section class="segment">
+                    <h2 class="year">۲۰۲۲</h2>
+                    <div class="posts">
+                            {{#foreach posts}}
+                                <a class="post" href="{{url}}">
+                                    <h3>
+                                        {{title}}
+                                    </h3>
+                                    <time
+                                        datetime="{{date format=" YYYY-MM-DD"}}"
+                                    >{{date format="D MMM YYYY"}}</time>
+                                </a>
+                            {{/foreach}}
+                    </div>
+                </section>
+            </div>
+            <div class="sidebar-content">
+                <aside class="post-sidebar">
+                    <div class="post-sidebar-card">
+                        <h2>Tags</h2>
+                        {{#get "tags" as |tags|}}
+                            {{> tags}}
+                        {{/get}}
+                    </div>
+                </aside>
+            </div>
         </div>
-
-    </div>
+    </section>
 </div>

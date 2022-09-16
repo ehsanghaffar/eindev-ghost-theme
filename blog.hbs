@@ -26,7 +26,7 @@
             </div>
             <div class="sidebar-content">
                 <aside class="post-sidebar">
-                    <div class="post-sidebar-card">
+                    {{! <div class="post-sidebar-card">
                         <h2>Categories</h2>
                         <div class="list">
                             <a class="category" href="/categories/architecture">
@@ -34,15 +34,11 @@
                                 <div class="count">6</div>
                             </a>
                         </div>
-                    </div>
+                    </div> }}
                     <div class="post-sidebar-card">
                         <h2>Tags</h2>
                         {{#get "tags" as |tags|}}
-                            <div class="tags">
-                                {{#foreach tags}}
-                                    <a class="tag" href="{{url}}">{{name}}</a>
-                                {{/foreach}}
-                            </div>
+                            {{> tags}}
                         {{/get}}
                     </div>
                 </aside>
