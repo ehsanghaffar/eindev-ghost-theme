@@ -1071,6 +1071,8 @@ a.post time {
     max-height: 100px;
     max-width: 100px;
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .list a {

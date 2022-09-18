@@ -1,10 +1,10 @@
 var button = document.querySelector(".theme-selector");
 var prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 var currentTheme;
+var btnText = document.getElementById("btnText");
 
 function setTheme(currentTheme) {
     var pressed = currentTheme === "dark" ? "true" : "false";
-
     document.documentElement.setAttribute(
         "data-theme-preference",
         currentTheme
@@ -22,13 +22,17 @@ if (localStorage.getItem("theme-preference")) {
 }
 
 button.addEventListener("click", function (event) {
-    console.log("Theme", currentTheme);
     currentTheme =
         document.documentElement.getAttribute("data-theme-preference") ===
         "dark"
             ? "light"
             : "dark";
     setTheme(currentTheme);
+    if (currentTheme === "light") {
+        btnText.innerText = "حالت تیره";
+    } else {
+        btnText.innerText = "حالت روشن";
+    }
 });
 
 prefersDark.addEventListener("change", function (event) {
@@ -38,8 +42,23 @@ prefersDark.addEventListener("change", function (event) {
 
 window.onload = () => {
     currentTheme = localStorage.getItem("theme-preference");
+    let lang = document.documentElement.getAttribute("lang");
+    if (currentTheme === "light") {
+        btnText.innerText = "حالت تیره";
+    } else {
+        btnText.innerText = "حالت روشن";
+    }
     document.documentElement.setAttribute(
         "data-theme-preference",
         currentTheme
     );
+    setDir(lang);
+};
+
+const setDir = (lang) => {
+    if (lang === "fa") {
+        document.documentElement.setAttribute("dir", "rtl");
+    } else if (lang === "en") {
+        document.documentElement.setAttribute("dir", "ltr");
+    }
 };
