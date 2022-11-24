@@ -62,3 +62,8 @@ const setDir = (lang) => {
         document.documentElement.setAttribute("dir", "ltr");
     }
 };
+
+// Handlebars.registerHelper("trimString", function(passedString) {
+//     const theString = passedString.substring(0, 30)
+//     return new Handlebars.SafeString(theString)
+// })
