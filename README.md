@@ -1,6 +1,6 @@
 # Eindev Ghost Theme
 
-A new multi language theme for [Ghost](https://ghost.org), Node.js CMS.
+A new theme for [Ghost](https://ghost.org), Node.js CMS.
 
 ## Description
 
@@ -39,7 +39,6 @@ The `zip` Gulp task packages the theme files into `dist/<theme-name>.zip`, which
 
 ```bash
 yarn zip
-
 ```
 
 &nbsp;

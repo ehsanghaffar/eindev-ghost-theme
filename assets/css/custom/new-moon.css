@@ -30,6 +30,11 @@
 
 pre {
   border: 0;
+  direction: ltr !important;
+}
+
+code {
+  direction: ltr !important;
 }
 
 code[class*='language-'],
@@ -126,6 +131,20 @@ code.language-shell::before {
 }
 
 .gatsby-highlight pre.language-terminal {
+  padding: 1rem;
+  position: relative;
+  padding-top: 3rem;
+  white-space: unset;
+  -webkit-text-size-adjust: none;
+  border: 1px solid var(--terminal-border);
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  background: var(--terminal-background-color);
+  max-width: 100%;
+}
+
+/* TODO: this is copy from ^ */
+pre.language-terminal {
   padding: 1rem;
   position: relative;
   padding-top: 3rem;

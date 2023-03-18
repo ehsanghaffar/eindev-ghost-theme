@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Inter:wght@400;500;700&family=Merriweather:wght@400;700&display=swap"); */
 
 :root {
     /* Colors */
@@ -151,6 +151,7 @@ blockquote {
 }
 
 @media screen and (min-width: 800px) {
+
     p,
     ul,
     ol,
@@ -248,7 +249,7 @@ h4:not(:first-child) {
     margin-top: 3.5rem;
 }
 
-h2 + h3 {
+h2+h3 {
     margin-top: 1.5rem !important;
 }
 
@@ -912,7 +913,7 @@ p.hero-description a:hover {
     color: var(--project-time-color);
 }
 
-.post-preview > div {
+.post-preview>div {
     flex: 1;
 }
 
@@ -928,7 +929,7 @@ p.hero-description a:hover {
     }
 }
 
-.post-preview > div {
+.post-preview>div {
     flex: 1;
 }
 
@@ -1125,6 +1126,7 @@ a.tag.active {
 }
 
 @media screen and (min-width: 700px) {
+
     .categories.anchored,
     .links.anchored {
         position: absolute;
@@ -1174,6 +1176,7 @@ a.category.active .count {
 .width.small {
     max-width: var(--content-width--small);
 }
+
 .width.medium {
     max-width: var(--content-width--medium);
 }
@@ -1397,4 +1400,9 @@ a.gatsby-resp-image-link {
 
 .rainbow-5 {
     background: var(--rainbow-5);
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
 }

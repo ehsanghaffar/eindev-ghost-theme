@@ -240,9 +240,3 @@ html,
         font-size: 1.6rem;
     }
 }
-
-@media (max-width: 500px) {
-    p {
-        font-size: 10px !important;
-    }
-}
