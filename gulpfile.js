@@ -9,6 +9,7 @@ var uglify = require('gulp-uglify');
 var beeper = require('beeper');
 
 // postcss plugins
+var tailwindcss = require('tailwindcss');
 var autoprefixer = require('autoprefixer');
 var colorFunction = require('postcss-color-mod-function');
 var cssnano = require('cssnano');
@@ -39,6 +40,7 @@ function css(done) {
     var processors = [
         easyimport,
         colorFunction(),
+        tailwindcss(),
         autoprefixer(),
         cssnano()
     ];
