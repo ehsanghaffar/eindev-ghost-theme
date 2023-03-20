@@ -1,17 +1,17 @@
 name: Test
 on:
-  pull_request:
-  push:
-    branches:
-      - main
-      - 'renovate/*'
+    pull_request:
+    push:
+        branches:
+            - main
+            - "renovate/*"
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
-    steps:
-      - uses: actions/checkout@v3
-      with:
-        node-version: '16'
-      - run: yarn
-      - run: yarn test:ci
+    test:
+        runs-on: ubuntu-latest
+        if: github.event_name == 'push' || (github.event_name == 'pull_request' && !startsWith(github.head_ref, 'renovate/'))
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  node-version: "16"
+            - run: yarn
+            - run: yarn test:ci
