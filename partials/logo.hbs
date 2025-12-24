@@ -1,0 +1,7 @@
+<a class="flex items-center gap-2 bg-gray-100 dark:bg-gray-700 rounded-md p-2" href="{{@site.url}}">
+    {{#if @site.logo}}
+        <img class="size-6 rounded-md object-cover" src="{{@site.logo}}" alt="{{@site.title}}">
+    {{else}}
+        <span class="text-gray-800 dark:text-gray-200">{{@site.title}}</span>
+    {{/if}}
+</a>

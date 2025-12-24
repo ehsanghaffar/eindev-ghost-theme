@@ -1,0 +1,22 @@
+{{!< default}}
+<div class="max-w-[1160px] mx-auto px-4 md:px-8 py-8 md:py-12">
+    <div class="grid grid-cols-1 lg:grid-cols-[auto_300px] gap-20">
+        <div class="max-w-full min-w-0 lg:col-span-2">
+
+            {{#post}}
+            <div class="mb-8 py-3 md:py-12">
+                <h1 class="gh-title text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-4">{{title}}</h1>
+            </div>
+            <section class="my-4 md:my-6">
+                <div class="post-content prose prose-lg dark:prose-invert max-w-none">
+                    {{#if custom_excerpt}}
+                    <p class="gh-excerpt text-xl text-gray-600 dark:text-gray-300 mb-6">{{custom_excerpt}}</p>
+                    {{/if}}
+
+                    {{content}}
+                </div>
+            </section>
+        </div>
+    </div>
+</div>
+    {{/post}}

@@ -1,0 +1,19 @@
+{{#get "posts" filter="featured:true" limit="all" as |featured|}}
+{{#if featured}}
+    {{#foreach featured}}
+<div class="bg-transparent border-2 border-gray-300 dark:border-gray-600 rounded-lg p-4 flex items-center">
+    <div class=" gatsby-image-wrapper"
+        style="position: relative; overflow: hidden; display: inline-block; width: 45px; height: 45px;">
+        {{#if featured}}
+        <img aria-hidden="true" src="{{img_url feature_image}}" alt="{{title}}"
+            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center center; opacity: 0;" />
+        {{/if}}
+    </div>
+    <div>
+        <time class="text-sm text-gray-500 dark:text-gray-400 font-mono">{{date format="D MMM YYYY"}}</time>
+        <a class="block text-lg font-bold text-gray-800 dark:text-white hover:underline hover:text-gray-900 dark:hover:text-gray-100" href="{{url}}">{{title}}</a>
+    </div>
+</div>
+    {{/foreach}}
+{{/if}}
+{{/get}}

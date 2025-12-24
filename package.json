@@ -1,0 +1,148 @@
+{
+    "name": "eindev-blog-theme",
+    "description": "Eindev Blog is a custom theme for ghost",
+    "demo": "https://ehsanghaffarii.ir",
+    "version": "1.0.0",
+    "engines": {
+        "ghost": ">=4.0.0"
+    },
+    "license": "MIT",
+    "screenshots": {
+        "desktop": "assets/screenshot-desktop.jpg"
+    },
+    "scripts": {
+        "dev": "concurrently \"gulp\" \"npx tailwindcss -i ./assets/css/tailwind.css -o ./assets/built/tailwind.css --watch\"",
+        "zip": "gulp zip",
+        "test": "gscan .",
+        "test:ci": "gscan --fatal --verbose .",
+        "pretest": "gulp build",
+        "preship": "yarn test",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; fi"
+    },
+    "author": {
+        "name": "Ehsan Ghaffar",
+        "email": "ghafari.5000@gmail.com",
+        "url": "https://ehsanghaffarii.ir"
+    },
+    "gpm": {
+        "type": "theme",
+        "categories": [
+            "Minimal",
+            "Magazine"
+        ]
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme",
+        "eindev"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ehsanghaffar/eindev-ghost-theme.git"
+    },
+    "bugs": "https://github.com/ehsanghaffar/eindev-ghost-theme/issue",
+    "contributors": "https://github.com/ehsanghaffar/eindev-ghost-theme/graphs/contributors",
+    "devDependencies": {
+        "autoprefixer": "10.4.11",
+        "beeper": "2.1.0",
+        "concurrently": "^9.2.1",
+        "cssnano": "5.1.13",
+        "gscan": "4.34.0",
+        "gulp": "4.0.2",
+        "gulp-livereload": "4.0.2",
+        "gulp-postcss": "9.0.1",
+        "gulp-sourcemaps": "3.0.0",
+        "gulp-uglify": "3.0.2",
+        "gulp-util": "3.0.8",
+        "gulp-watch": "5.0.1",
+        "gulp-zip": "5.1.0",
+        "postcss": "8.4.16",
+        "postcss-color-mod-function": "3.0.3",
+        "postcss-easy-import": "4.0.0",
+        "tailwindcss": "^4.1.18"
+    },
+    "browserslist": [
+        "defaults"
+    ],
+    "config": {
+        "card_assets": true,
+        "posts_per_page": 15,
+        "image_sizes": {
+            "xxs": {
+                "width": 30
+            },
+            "xs": {
+                "width": 100
+            },
+            "s": {
+                "width": 300
+            },
+            "m": {
+                "width": 600
+            },
+            "l": {
+                "width": 1200
+            },
+            "xl": {
+                "width": 2000
+            }
+        },
+        "custom": {
+            "hero_section": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "hero_title": {
+                "type": "text",
+                "default": "Hero Title Text",
+                "group": "homepage"
+            },
+            "hero_text": {
+                "type": "text",
+                "default": "Text to show on hero section",
+                "group": "homepage"
+            },
+            "hero_image": {
+                "type": "image",
+                "group": "homepage"
+            },
+            "latest_post": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "latest_post_title": {
+                "type": "text",
+                "default": "Latest Posts",
+                "group": "homepage"
+            },
+            "featured_post": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "featured_post_title": {
+                "type": "text",
+                "default": "Featured Posts",
+                "group": "homepage"
+            },
+            "projects": {
+                "type": "boolean",
+                "default": true,
+                "group": "homepage"
+            },
+            "projects_title": {
+                "type": "text",
+                "default": "Projects",
+                "group": "homepage"
+            },
+            "footer_text": {
+                "type": "text",
+                "default": "Copyright 2022 @ Ehsan Ghaffar",
+                "group": "footer"
+            }
+        }
+    }
+}

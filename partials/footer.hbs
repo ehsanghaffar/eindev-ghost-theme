@@ -1,0 +1,48 @@
+<footer class="w-full py-12 mt-auto border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-9">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
+            <nav class="flex items-center gap-4">
+                <a href="{{@site.url}}" class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors">
+                    <span class="hidden sm:inline">{{@custom.footer_text}}</span>
+                </a>
+                <a
+                    href="https://ehsanghaffarii.ir/rss.xml"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >RSS</a>
+            </nav>
+            <nav class="flex items-center gap-4">
+              {{#if @site.facebook}}
+                <a
+                    href="{{facebook_url @site.facebook}}"
+                    title="facebook link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  <span class="sr-only">facebook</span>
+                    <img src="{{asset "img/facebook.png"}}" width="30" height="30" alt="facebook link" class="w-8 h-8" />
+                </a>
+                {{/if}}
+                {{#if @site.twitter}}
+                <a
+                    href="{{twitter_url @site.twitter}}"
+                    title="twiiter link"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                    <span class="sr-only">twitter</span>
+                    <img
+                        src="{{asset "img/twitter.png"}}"
+                        alt="twitter"
+                        width="30"
+                        height="30"
+                        class="w-8 h-8"
+                    /></a>
+                {{/if}}
+            </nav>
+        </div>
+    </section>
+</footer>

@@ -1,0 +1,20 @@
+{{!-- header section --}}
+<section class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-700 bg-gray-100/80 dark:bg-gray-9/80 backdrop-blur-lg supports-[backdrop-filter]:bg-gray-100/60 dark:supports-[backdrop-filter]:bg-gray-9/60">
+    <div class="max-w-[1160px] mx-auto px-4 md:px-8 flex h-16 items-center justify-between">
+        {{> logo}}
+        <nav class="flex items-center justify-between">
+            {{#if @site.navigation}}
+                <div class="flex items-center gap-4">
+                    {{navigation}}
+                </div>
+            {{/if}}
+        </nav>
+        <div class="theme-toggle">
+            <button class="theme-selector p-2 rounded-md hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+                <img src="{{asset "img/dark-mode.png"}}" alt="Theme toggle" class="size-6 object-cover" />
+                {{!-- <span>{{t "darkmode"}}</span> --}}
+                <span id="btnText"></span>
+            </button>
+        </div>
+    </div>
+</section>

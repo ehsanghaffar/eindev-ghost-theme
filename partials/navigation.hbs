@@ -1,0 +1,8 @@
+{{#foreach navigation}}
+    <div class="flex items-center">
+        {{!-- <img src="{{asset 'img/site-icon.png'}}" class="hidden h-5 w-5 min-h-5 min-w-5" /> --}}
+        <a class="flex justify-between items-center gap-2 cursor-pointer text-sm md:text-base font-medium text-gray-800 dark:text-gray-200 p-0 border-0 border-t-2 border-b-2 border-transparent mx-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md p-2" href="{{url absolute="true"}}">
+            <span>{{label}}</span>
+        </a>
+    </div>
+{{/foreach}}

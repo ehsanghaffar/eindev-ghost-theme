@@ -1,0 +1,12 @@
+
+<div class="flex flex-col rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-100 dark:bg-gray-9 p-4 md:p-6 relative hover:shadow-md transition-shadow">
+    <time datetime="{{date format=" YYYY-MM-DD"}}" class="block text-sm text-gray-500 dark:text-gray-400 mb-2 font-mono">{{date format="D MMM YYYY"}}</time>
+    <a class="block text-base font-bold text-gray-800 dark:text-white hover:text-gray-900 dark:hover:text-white transition-colors" href="{{url}}">{{title}}</a>
+    {{#if tags}}
+    <div class="mt-2 flex justify-end text-xs ">
+     {{#foreach tags}}
+        <p class="text-xs font-normal px-2 py-1 border border-gray-300 dark:border-gray-600 rounded dark:bg-gray-800 text-gray-700 dark:text-gray-300" title="{{name}}">{{name}}</p>
+     {{/foreach}}
+    </div>
+    {{/if}}
+</div>

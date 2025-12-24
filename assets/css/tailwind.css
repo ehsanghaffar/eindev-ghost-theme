@@ -1,0 +1,78 @@
+/* Tailwind CSS v4 Entry File
+/* ---------------------------------------------------------- */
+
+@import "tailwindcss";
+
+/* Configure content scanning for Handlebars templates */
+@source "../../*.hbs";
+@source "../../partials/**/*.hbs";
+@source "../../members/**/*.hbs";
+
+/* Theme Configuration
+/* ---------------------------------------------------------- */
+
+@theme {
+    /* Colors - Migrated from vars.css and custom/style.css */
+    --color-primary: var(--ghost-accent-color, #3eb0ef);
+    --color-base: #131313;
+    --color-border: #ddd;
+    --color-bg: #f5f5f5;
+    --color-success: #80b912;
+    --color-error: #f05230;
+
+    /* Gray Scale - From custom/style.css */
+    --color-gray-0: #f8f9fa;
+    --color-gray-1: #f1f3f5;
+    --color-gray-2: #e9ecef;
+    --color-gray-3: #dee2e6;
+    --color-gray-4: #ced4da;
+    --color-gray-5: #adb5bd;
+    --color-gray-6: #868e96;
+    --color-gray-7: #4b5056;
+    --color-gray-8: #31363b;
+    --color-gray-9: #212529;
+    --color-gray-10: #151618;
+
+    /* Accent Colors */
+    --color-green: #51b681;
+    --color-red: #f34646;
+    --color-blue: #07a7e6;
+    --color-orange: #ff7e22;
+    --color-yellow: #fca62a;
+    --color-pink: #e855b3;
+    --color-purple: #623ac6;
+    --color-indigo: #5a43f1;
+
+    /* Font Families */
+    --font-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    --font-serif: Georgia, Times, serif;
+    --font-mono: Menlo, Courier, monospace;
+    --font-body: "Shabnam", sans-serif;
+    --font-heading: "Shabnam", sans-serif;
+
+    /* Font Weights */
+    --font-weight-light: 100;
+    --font-weight-normal: 400;
+    --font-weight-bold: 700;
+    --font-weight-heavy: 800;
+
+    /* Breakpoints - Converted from vars.css */
+    --breakpoint-xsmall: 480px;
+    --breakpoint-small: 740px;
+    --breakpoint-medium: 980px;
+    --breakpoint-large: 1280px;
+    --breakpoint-xlarge: 1680px;
+
+    /* Spacing - Using Tailwind defaults but keeping custom values available */
+    --spacing-height: 4rem;
+    --spacing-margin: 2rem;
+    --radius-default: 0.5rem;
+}
+
+/* Dark Mode Configuration
+/* Using data-theme-preference="dark" selector */
+/* Tailwind v4 supports dark mode via CSS selectors */
+@custom-variant dark (&:where([data-theme-preference="dark"], [data-theme-preference="dark"] *));
+

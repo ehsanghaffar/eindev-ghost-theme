@@ -1,0 +1,49 @@
+{{!< default}}
+<div>
+    <section class="max-w-[1160px] mx-auto px-4 md:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-[auto_300px] gap-20">
+            <div class="max-w-full min-w-0">
+                <header class="py-3 md:py-12">
+                    <h1 class="text-gray-900 dark:text-white">نوشته‌ها</h1>
+                </header>
+                <section class="my-6 md:my-12">
+                    <h2 class="text-green-600 dark:text-green-400">جدیدترین نوشته‌ها</h2>
+                    {{#get "posts" include="tags" as |posts|}}
+                        <div>
+                            {{#foreach posts}}
+                                <a class="grid grid-cols-[1fr_100px] gap-6 py-1.5 my-0.5 hover:text-gray-900 dark:hover:text-white hover:underline" href="{{url}}">
+                                    <h3 class="m-0 text-base md:text-lg font-medium text-gray-800 dark:text-white leading-tight">
+                                        {{title}}
+                                    </h3>
+                                    <time
+                                        datetime="{{date format=" YYYY-MM-DD"}}"
+                                        class="block ml-auto font-mono text-gray-500 dark:text-gray-400 text-sm font-medium"
+                                    >{{date format="D MMM YYYY"}}</time>
+                                </a>
+                            {{/foreach}}
+                        </div>
+                    {{/get}}
+                </section>
+            </div>
+            <div>
+                <aside>
+                    {{! <div class="bg-gray-100 dark:bg-gray-9 p-6 rounded mb-8">
+                        <h2>Categories</h2>
+                        <div class="list">
+                            <a class="category" href="/categories/architecture">
+                                <div class="name">Architecture</div>
+                                <div class="count">6</div>
+                            </a>
+                        </div>
+                    </div> }}
+                    <div class="bg-gray-100 dark:bg-gray-9 p-6 rounded mb-8">
+                        <h2 class="text-gray-900 dark:text-white">Tags</h2>
+                        {{#get "tags" as |tags|}}
+                            {{> tags}}
+                        {{/get}}
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+</div>

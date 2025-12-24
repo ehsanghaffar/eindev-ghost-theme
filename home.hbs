@@ -1,0 +1,49 @@
+{{!< default}}
+
+<div>
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        {{> "hero"}}
+    </div>
+    <div class="max-w-7xl mx-auto px-4 md:px-8">
+        {{#if @custom.latest_post}}
+        <div class="my-6 md:my-12">
+            {{#get "posts" limit="6" include="tags" as |recents|}}
+            {{#if recents}}
+            <h2 class="flex justify-between items-center mb-6 mt-12 border-0 p-0">
+                <div>
+                    <div class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-0">
+                        {{@custom.latest_post_title}}
+                    </div>
+                </div>
+                <a class="inline-flex items-center px-4 py-2.5 rounded border-2 border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-medium hover:text-gray-900 dark:hover:text-white hover:border-gray-500 dark:hover:border-gray-400" href="/blog">{{t "View all"}}</a>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
+            {{#foreach recents}}
+                {{> "card"}}
+            {{/foreach}}
+            </div>
+            {{/if}}
+            {{/get}}
+        </div>
+        {{/if}}
+        {{#if @custom.featured_post}}
+        <div class="my-6 md:my-12">
+            <h2 class="flex justify-between items-center mb-6 mt-12 border-0 p-0">
+                <div>
+                    <div class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-0">
+                        {{@custom.featured_post_title}}
+                    </div>
+                </div>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {{> loop}}
+            </div>
+        </div>
+        {{/if}}
+        {{#if @custom.projects}}
+        <div class="my-6 md:my-12">
+            {{> projects}}
+        </div>
+        {{/if}}
+    </div>
+</div>
